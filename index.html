@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dynamic Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h1>Welcome to Our Simple Dynamic Site</h1>
+            <p>Click the button to change the message.</p>
+            <button onclick="changeMessage()">Click Me!</button>
+            <p id="dynamicMessage">This is the original message.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Simple Dynamic Site</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
