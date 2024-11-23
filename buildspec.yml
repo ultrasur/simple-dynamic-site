@@ -3,23 +3,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14  # Optional if you're using Node.js or need any specific runtime
+      nodejs: 14  # Optional, only if you need a specific runtime like Node.js
     commands:
-      - echo "Installing dependencies..."
+      - echo "Preparing environment..."
   build:
     commands:
-      - echo "Starting build..."
-      # You can add build commands here if needed (e.g., minification, etc.)
-      - echo "Build completed."
-  post_build:
-    commands:
-      - echo "Copying files to S3 bucket..."
-      - aws s3 cp index.html s3://your-s3-bucket-name/
-      - aws s3 cp styles.css s3://your-s3-bucket-name/
-      - aws s3 cp script.js s3://your-s3-bucket-name/
+      - echo "Fetching files from GitHub..."
+      - git clone https://github.com/ultrasur/simple-dynamic-site.git
+      - cd simple-dynamic-site
+      - echo "Files fetched from GitHub."
+      - echo "Running build steps... (if any)"
+      # Any additional build commands can go here (e.g., minification, bundling, etc.)
+      - echo "Build complete."
 
 artifacts:
   files:
-    - index.html
-    - styles.css
-    - script.js
+    - simple-dynamic-site/index.html
+    - simple-dynamic-site/styles.css
+    - simple-dynamic-site/script.js
